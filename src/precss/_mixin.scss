@@ -1,0 +1,72 @@
+@mixin border($rad) {
+  border-radius: $rad;
+}
+@mixin shadow() {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);;
+}
+@mixin font($size, $line, $color) {
+  font-size: $size;
+  line-height: $line;
+  color: $color;
+}
+
+@mixin btn($width, $height, $border){
+  display: block;
+  text-align: center;
+  width: $width;
+  height: $height;
+  border: $border;
+  outline: none;
+  cursor: pointer;
+}
+
+@mixin dots {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: $color1;
+    margin-right: 10px;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+    
+
+}
+
+
+
+
+@mixin col-l($width) {
+  @media (max-width: 1170px) {
+    width: calc(#{$width} - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+@mixin col-m($width) {
+  @media (max-width: 992px) {
+    width: calc(#{$width} - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+
+  }
+}
+@mixin col-sm($width) {
+  @media (max-width: 768px) {
+    width: calc(#{$width} - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+
+  }
+}
+@mixin col-s($width) {
+  @media (max-width: 576px) {
+    width: calc(#{$width} - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+
+  }
+}
+

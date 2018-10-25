@@ -1,0 +1,23 @@
+/* @import '_reset';
+@import '_var';
+@import '_grid';
+@import'_mixin';
+
+body {
+    font-family: 'Open Sans', sans-serif;
+
+}
+h2 {
+    @include font(32px, 1, $color1);
+    font-weight: 700;
+}
+
+h3 {
+    @include font(22px, 1, $color2);
+    font-weight: 700;
+}
+p {
+    @include font(14px, 1, $colorGrey);
+    font-weight: 700;
+} */
+
