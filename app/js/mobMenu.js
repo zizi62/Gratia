@@ -1,15 +1,1 @@
-"use strict";
-
-+function () {
-  var mobButton = document.querySelector('.mob__menu_buttom');
-  var mobMenu = document.querySelector('.menu');
-  mobButton.addEventListener('click', mobMenuDown);
-
-  function mobMenuDown() {
-    if (mobMenu.classList.contains('menu__active')) {
-      mobMenu.classList.remove('menu__active');
-    } else {
-      mobMenu.classList.add('menu__active');
-    }
-  }
-}();
+"use strict";!function(){var e=document.querySelector(".mob__menu_buttom"),t=document.querySelector(".menu");e.addEventListener("click",function(){t.classList.contains("menu__active")?t.classList.remove("menu__active"):t.classList.add("menu__active")})}();
