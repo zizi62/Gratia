@@ -46,7 +46,7 @@
   }
 }
 @mixin col-m($width) {
-  @media (max-width: 992px) {
+  @media (max-width: $md) {
     width: calc(#{$width} - 30px);
     margin-left: 15px;
     margin-right: 15px;
@@ -54,7 +54,7 @@
   }
 }
 @mixin col-sm($width) {
-  @media (max-width: 768px) {
+  @media (max-width: $sm) {
     width: calc(#{$width} - 30px);
     margin-left: 15px;
     margin-right: 15px;
@@ -62,7 +62,7 @@
   }
 }
 @mixin col-s($width) {
-  @media (max-width: 576px) {
+  @media (max-width: $xs) {
     width: calc(#{$width} - 30px);
     margin-left: 15px;
     margin-right: 15px;

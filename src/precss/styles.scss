@@ -5,7 +5,6 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-
 }
 h2 {
     @include font(32px, 1, $color1);
@@ -37,7 +36,7 @@ p {
     width: 100%;
     background-color: $color1;  
     padding: 30px 80px;
-    @media (max-width: 992px) {
+    @media (max-width: $md) {
         padding: 15px;
     }
 }
@@ -47,7 +46,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media (max-width: 768px) {
+    @media (max-width: $sm) {
     display: block;
     }
 
@@ -63,7 +62,7 @@ p {
     margin: 15px;
     height: auto;
     transition: 0.3s;
-    @media (max-width: 768px) {
+    @media (max-width: $sm) {
         height: 0;
         overflow: hidden; 
         opacity: 0;
@@ -84,10 +83,10 @@ p {
         font-weight: 700;
         margin-left: 65px;
         text-align: center;
-        @media (max-width: 992px) {
+        @media (max-width: $md) {
             margin-left: 30px;
         };
-        @media (max-width: 768px) {
+        @media (max-width: $sm) {
 
             padding: 16px;
             width: 100%;
@@ -103,7 +102,7 @@ p {
         color: $color2;
         border-bottom: 2px solid  $color2;
     }
-    @media (max-width: 768px) {
+    @media (max-width: $sm) {
         display: block;
         &:hover{
             transform: scale(1.05);
@@ -130,7 +129,7 @@ p {
     display: none;
     top: 11px;
     right: 0; 
-    @media (max-width: 768px) {
+    @media (max-width: $sm) {
         display: block;
         }
     }
@@ -152,7 +151,7 @@ margin-bottom: 0; }
         color: $color1;
         }
 
-    @media (max-width: 768px) {
+    @media (max-width: $sm) {
         border-bottom: none;
     }
     
@@ -162,7 +161,9 @@ margin-bottom: 0; }
     padding: 50px 90px;
     width: 100%;
     background-color: $color1;
-    
+    @media (max-width: $md) {
+            padding: 15px;
+        }
 
 }
 .slider__text {
@@ -171,6 +172,9 @@ margin-bottom: 0; }
     display: block;
     font-weight: 800;
     text-shadow:0 -7px 28px rgba(0,0,0,0.8), 0 10px 10px rgba(0,0,0,0.8);
+    @media (max-width: $md) {
+        display: none;
+    }
 }
 
 .slider__text_right {
@@ -214,7 +218,10 @@ margin-bottom: 0; }
     margin: 0 auto;
     overflow: hidden;    
     position: relative;   
-    z-index: 20;  
+    z-index: 20; 
+    @media (max-width: $md) {
+        width: 400px;
+    } 
     @media (max-width: 435px) {
         display: none;
     }
@@ -238,6 +245,10 @@ margin-bottom: 0; }
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    @media (max-width: $md) {
+        width: 400px;
+        height: 250px;
+    }
     
     &:nth-child(1) {
         background-image:  url(/img/c21a2e3c30fceedebd84ef3b95f8b757.png); 
@@ -332,6 +343,10 @@ margin-bottom: 0; }
     margin: 0 auto;
     margin-top: -30px;
     cursor: pointer;
+    @media (max-width: $md) {
+        width: 60%;
+        margin-top: 10px;   
+    }
     p{
         margin-bottom: 20px;
     }
@@ -346,30 +361,10 @@ margin-bottom: 0; }
 
 }
 
-@media (max-width: 992px) {
-    .slider {
-        padding: 15px;
-    }
-    .slider__text {
-        display: none;
-    }
-    .slider__view {
-        width: 400px;
-    }
-    .slider__img {
-        width: 400px;
-        height: 250px;
-    }
-    .slider__scroll {
-        width: 60%;
-        margin-top: 10px;
-
-    }
-    
-}
 
 
-@media (max-width: 768px) {
+
+@media (max-width: $sm) {
     .slider__button  {
         display: none;
     }
@@ -401,7 +396,7 @@ margin-bottom: 0; }
         margin-top: 40px;
     }
     @include col-m(60%);
-    @media (max-width: 992px) {
+    @media (max-width: $md) {
         margin: 30px auto;
       }
 
@@ -446,7 +441,7 @@ margin-bottom: 0; }
         }
     }
     @include col-m(60%);
-    @media (max-width: 992px) {
+    @media (max-width: $md) {
         order: 1;
       }
     @include col-sm(90%);
@@ -521,7 +516,7 @@ margin-bottom: 0; }
     background-color: $color3;
     margin: 0 auto;
     padding: 40px;
-    @media (max-width: 576px) {
+    @media (max-width: $xs) {
         padding: 10px;
         height: 300px;
     }
@@ -534,7 +529,7 @@ margin-bottom: 0; }
     margin: 0 auto;
     border: 1px solid $colorGrey;
     padding: 60px;
-    @media (max-width: 576px) {
+    @media (max-width: $xs) {
         padding: 30px 10px;
     }
 
@@ -561,7 +556,7 @@ margin-bottom: 0; }
         transform: scale(1.05);
         @include shadow();
     }
-    @media (max-width: 576px) {
+    @media (max-width: $xs) {
         width: 260px;
         padding: 15px 10px;
     }
@@ -602,25 +597,25 @@ margin-bottom: 0; }
 
 
 
-.bottom {
+.footer {
     width: 100%;
     padding-top: 60px;
     text-align: center;
 }
 
-.bottom__top {
+.footer__top {
     position: relative;
     padding-top: 68px;
 }
 
-.bottom__line {
+.footer__line {
     width: 100%;
     height: 1px;
     background-color: $colorGrey;
     
 }
 
-.bottom__around {
+.footer__around {
     position: absolute;
     width: 136px;
     height: 136px;
@@ -657,7 +652,7 @@ margin-bottom: 0; }
         color: $color1;
     }
 }
-.bottom__text {
+.footer__text {
     @include font(14px, 1, $color1);
     margin-top: 100px;
     font-weight: 800;
@@ -798,11 +793,11 @@ input {
     flex-wrap: wrap;
     box-shadow: 2px 0px 114px 24px rgba(0,0,0,0.1);
     @include col-m(90%);
-    @media (max-width: 992px) {
+    @media (max-width: $md) {
         margin: 0 auto;
     }
     @include col-sm(90%);
-    @media (max-width: 768px) {
+    @media (max-width: $sm) {
         margin: 0 auto;
     }
     
@@ -810,7 +805,7 @@ input {
 
 .meal__img {
     width: 50%;
-    @media (max-width: 768px) {
+    @media (max-width: $sm) {
         width: 100%;
         margin: 0;
     }
@@ -818,7 +813,7 @@ input {
 
 .meal__text-block {
     width: 50%;  
-    @media (max-width: 768px) {
+    @media (max-width: $sm) {
         width: 100%;
         margin: 0;
     }
@@ -868,7 +863,7 @@ input {
     justify-content: space-evenly;
     border-bottom: 0.5px solid $colorGrey;
     &:last-child {border-bottom: none;} 
-    @media (max-width: 768px) {
+    @media (max-width: $sm) {
         padding: 15px 0;
     }
 } 
