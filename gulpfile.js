@@ -18,7 +18,7 @@ const config = {
         dest: '/css'
     },
     html: {
-        src: '/index.html',
+        src: '/*.html'
     },
 
     js: {
@@ -45,7 +45,17 @@ gulp.task('build', function () {
             .pipe(browserSync.reload({
                 stream: true
             }));
+   
 });
+
+gulp.task('build-html', function(){
+    gulp.src(config.src + config.html.src)
+    .pipe(gulp.dest(config.app))
+    .pipe(browserSync.reload({
+        stream: true
+    }));
+
+})
 
 gulp.task('build-js', function () {
     return gulp.src(config.src + config.js.src)
@@ -57,19 +67,19 @@ gulp.task('build-js', function () {
   });
 
 
-  gulp.task('compress', function (cb) {
-    pump([
-          gulp.src('src/js/**/*.js'),
-          uglify(),
-          gulp.dest(config.app + config.js.dest)
-      ],
-      cb
-    );
+//   gulp.task('compress', function (cb) {
+//     pump([
+//           gulp.src('src/js/**/*.js'),
+//           uglify(),
+//           gulp.dest(config.app + config.js.dest)
+//       ],
+//       cb
+//     );
  
-  });
+//   });
 
 gulp.task('watch', ['browserSync'], function () {
-    gulp.watch(config.src + config.css.watch, ['build','build-js', 'compress']);
+    gulp.watch(config.src + config.css.watch, ['build','build-js','build-html']);
     gulp.watch(config.src + config.html.src, browserSync.reload);
     gulp.watch(config.src + config.js.src, browserSync.reload);
 });
