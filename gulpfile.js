@@ -40,7 +40,7 @@ gulp.task('build', function () {
                 level: 2
             }))
             .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest(config.app + config.css.dest))
+            .pipe(gulp.dest(config.src + config.css.dest))
 
             .pipe(browserSync.reload({
                 stream: true
@@ -50,7 +50,7 @@ gulp.task('build', function () {
 
 gulp.task('build-html', function(){
     gulp.src(config.src + config.html.src)
-    .pipe(gulp.dest(config.app))
+    .pipe(gulp.dest(config.src))
     .pipe(browserSync.reload({
         stream: true
     }));
@@ -63,7 +63,7 @@ gulp.task('build-js', function () {
         presets: ['@babel/env']
     }))
 
-      .pipe(gulp.dest(config.app + config.js.dest));
+      .pipe(gulp.dest(config.src + config.js.dest));
   });
 
 
