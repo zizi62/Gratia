@@ -595,8 +595,6 @@ margin-bottom: 0; }
    
 }
 
-
-
 .footer {
     width: 100%;
     padding-top: 60px;
@@ -666,7 +664,6 @@ margin-bottom: 0; }
         flex-wrap: wrap;
         justify-content: center;
     }
-
 }
 
 .menubox__item {
@@ -699,8 +696,6 @@ margin-bottom: 0; }
     @include col-sm(60%);
     @include col-s(90%);
 }
-
-
 
 // BOOKTABLE
 .book {
